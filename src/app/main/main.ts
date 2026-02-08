@@ -11,7 +11,7 @@ import { BibleService, BibleBook, SearchResult } from '../core/services/bible.se
 import { Observable, combineLatest } from 'rxjs';
 import { VerseMenuComponent } from '../shared/verse-menu/verse-menu';
 import { Title, Meta } from '@angular/platform-browser';
-import { ThemeToggleComponent } from '../shared/theme-toggle/theme-toggle';
+// import { ThemeToggleComponent } from '../shared/theme-toggle/theme-toggle'; // Hidden for now
 
 @Component({
   selector: 'app-main',
@@ -25,7 +25,7 @@ import { ThemeToggleComponent } from '../shared/theme-toggle/theme-toggle';
     VerseComponent,
     SearchComponent,
     VerseMenuComponent,
-    ThemeToggleComponent
+    // ThemeToggleComponent // Hidden for now
   ],
   templateUrl: './main.html',
   styleUrl: './main.scss',
@@ -69,7 +69,7 @@ export class MainComponent implements OnInit {
       this.bibleService.previousChapter();
     });
 
-    // SEO Updates
+    // SEO Updates & Scroll to top on chapter change
     combineLatest([this.currentBook$, this.currentChapterIndex$]).subscribe(([book, chapterIndex]) => {
       if (book) {
         const chapter = chapterIndex + 1;
@@ -84,6 +84,9 @@ export class MainComponent implements OnInit {
         this.metaService.updateTag({ property: 'og:title', content: pageTitle });
         this.metaService.updateTag({ property: 'og:description', content: desc });
         this.metaService.updateTag({ property: 'og:type', content: 'book' });
+
+        // Scroll to top when chapter changes
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   }
