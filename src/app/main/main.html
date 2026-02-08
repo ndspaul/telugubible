@@ -13,6 +13,7 @@
         [verseIndex]="i + 1"
         [bookName]="data.book?.teluguName ?? ''"
         [chapter]="(data.chapterIndex ?? 0) + 1"
+        (tap)="handleVerseTap(verse, i + 1, data.book?.teluguName ?? '', (data.chapterIndex ?? 0) + 1)"
         (longPress)="handleVerseLongPress(verse, i + 1, data.book?.teluguName ?? '', (data.chapterIndex ?? 0) + 1)">
       </app-verse>
     </div>

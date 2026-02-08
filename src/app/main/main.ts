@@ -131,7 +131,16 @@ export class MainComponent implements OnInit {
     this.showSearch = false;
   }
 
+  handleVerseTap(verse: any, index: number, bookName: string, chapter: number) {
+    // Single tap immediately opens share menu
+    this.selectedVerse = verse;
+    this.selectedVerseBook = bookName;
+    this.selectedVerseChapter = chapter;
+    this.selectedVerseIndex = index;
+  }
+
   handleVerseLongPress(verse: any, index: number, bookName: string, chapter: number) {
+    // Long press also opens share menu (same behavior for now)
     this.selectedVerse = verse;
     this.selectedVerseBook = bookName;
     this.selectedVerseChapter = chapter;
