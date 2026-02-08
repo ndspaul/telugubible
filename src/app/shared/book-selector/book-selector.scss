@@ -1,0 +1,112 @@
+.book-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease-in-out;
+
+  .selector-container {
+    width: 90%;
+    max-width: 600px;
+    height: 80vh; /* Constant height */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
+
+    .selector-header {
+      padding: 16px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .tabs {
+        display: flex;
+        gap: 10px;
+
+        .tab-btn {
+          padding: 8px 16px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-family: 'Ramabhadra', sans-serif;
+          font-size: 1rem;
+          color: #7f8c8d;
+          border-bottom: 2px solid transparent;
+          transition: all 0.2s;
+
+          &.active {
+            color: #d35400;
+            border-bottom-color: #d35400;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 50%;
+        color: #95a5a6;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #e74c3c;
+        }
+      }
+    }
+
+    .book-list {
+      padding: 16px;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+
+      .book-item {
+        padding: 12px;
+        background-color: #f9f9f9;
+        border: 1px solid transparent; /* Better for focus states */
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Mandali', sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        transition: all 0.2s;
+        color: #333; /* default text color */
+
+        &:hover {
+          background-color: #f0f0f0;
+          color: #d35400;
+          border-color: #d35400;
+        }
+
+        &:focus {
+          outline: 2px solid #d35400;
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

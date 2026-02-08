@@ -1,0 +1,232 @@
+/* Global Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Mandali', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-theme .app-header {
+  background-color: #2d2d2d !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-theme .title {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .icon-btn {
+  color: #b0b0b0 !important;
+}
+
+body.dark-theme .icon-btn:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+body.dark-theme .verse {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .verse-number {
+  color: #d35400 !important;
+}
+
+body.dark-theme .footer {
+  background-color: #2d2d2d !important;
+  border-top-color: #444 !important;
+}
+
+body.dark-theme .footer-content span {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .search-overlay {
+  background-color: #2d2d2d !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .search-container {
+  background-color: #2d2d2d !important;
+}
+
+body.dark-theme .search-header {
+  border-bottom-color: #444 !important;
+}
+
+body.dark-theme .search-input {
+  background-color: #3a3a3a !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .input-wrapper {
+  background-color: #3a3a3a !important;
+}
+
+body.dark-theme .close-btn {
+  color: #e74c3c !important;
+}
+
+body.dark-theme .search-results {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .result-item {
+  border-bottom-color: #444 !important;
+}
+
+body.dark-theme .result-item:hover {
+  background-color: #3a3a3a !important;
+}
+
+body.dark-theme .result-text {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .no-results,
+body.dark-theme .loading-state {
+  color: #b0b0b0 !important;
+}
+
+body.dark-theme .search-context {
+  background-color: #1a3a4a !important;
+  border-bottom-color: #2a4a5a !important;
+}
+
+body.dark-theme .context-info {
+  color: #5dade2 !important;
+}
+
+body.dark-theme .dialog-overlay {
+  background-color: rgba(0,0,0,0.7) !important;
+}
+
+body.dark-theme .dialog {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .dialog-header {
+  border-bottom-color: #444 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .dialog-title {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .book-item {
+  background-color: #3a3a3a !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.dark-theme .book-item:hover {
+  background-color: #444 !important;
+}
+
+body.dark-theme .chapter-item {
+  background-color: #3a3a3a !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+body.dark-theme .chapter-item:hover {
+  background-color: #444 !important;
+}
+
+body.dark-theme .testament-tabs {
+  border-bottom-color: #444 !important;
+}
+
+body.dark-theme .testament-tab {
+  color: #b0b0b0 !important;
+  border-bottom-color: transparent !important;
+}
+
+body.dark-theme .testament-tab.active {
+  color: #d35400 !important;
+  border-bottom-color: #d35400 !important;
+}
+
+body.dark-theme .menu-overlay {
+  background-color: rgba(0,0,0,0.7) !important;
+}
+
+body.dark-theme .menu-container {
+  background-color: #2d2d2d !important;
+  color: #e0e0e0 !important;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .menu-header {
+  border-bottom-color: #444 !important;
+}
+
+body.dark-theme .verse-ref {
+  color: #d35400 !important;
+}
+
+body.dark-theme .menu-item {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .menu-item:hover {
+  background-color: #3a3a3a !important;
+}
+
+body.dark-theme .menu-item:active {
+  background-color: #444 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ramabhadra', sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 300;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+  color: #e0e0e0;
+}
+
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-height: 90vh;
+}
+
+body.dark-theme .main-container {
+  background-color: #2d2d2d;
+}
+
+.verses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

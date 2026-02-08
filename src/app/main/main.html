@@ -1,0 +1,64 @@
+<app-header (searchClick)="openSearch()"></app-header>
+
+<div class="main-content">
+  <ng-container *ngIf="{ 
+    verses: currentVerses$ | async, 
+    book: currentBook$ | async, 
+    chapterIndex: currentChapterIndex$ | async 
+  } as data">
+    <div class="verses-list" *ngIf="data.verses">
+      <app-verse 
+        *ngFor="let verse of data.verses; let i = index" 
+        [verseData]="verse"
+        [verseIndex]="i + 1"
+        [bookName]="data.book?.teluguName ?? ''"
+        [chapter]="(data.chapterIndex ?? 0) + 1"
+        (longPress)="handleVerseLongPress(verse, i + 1, data.book?.teluguName ?? '', (data.chapterIndex ?? 0) + 1)">
+      </app-verse>
+    </div>
+  </ng-container>
+</div>
+
+<app-footer
+  *ngIf="currentBook$ | async as book"
+  [bookName]="book.teluguName"
+  [chapter]="(currentChapterIndex$ | async)! + 1"
+  (openSelector)="openChapterSelector()">
+</app-footer>
+
+<app-book-selector
+  *ngIf="showSelector"
+  [initialTestament]="(currentBook$ | async)?.testament ?? 'Old'"
+  (bookSelected)="onBookSelected($event)"
+  (close)="toggleSelector()">
+</app-book-selector>
+
+<app-chapter-selector
+  *ngIf="showChapterSelector"
+  [chaptersCount]="(chaptersCount$ | async)!"
+  [loading]="(loading$ | async)!"
+  [bookName]="(currentBook$ | async)?.teluguName ?? ''"
+  (chapterSelected)="onChapterSelected($event)"
+  (changeBook)="onChangeBook()"
+  (close)="showChapterSelector = false">
+</app-chapter-selector>
+
+<app-search
+  *ngIf="showSearch"
+  [initialQuery]="searchInitialQuery"
+  [isSimilarSearch]="searchIsSimilar"
+  (resultSelected)="onSearchResult($event)"
+  (close)="showSearch = false">
+</app-search>
+
+<app-verse-menu
+  *ngIf="selectedVerse"
+  [bookName]="selectedVerseBook"
+  [chapter]="selectedVerseChapter"
+  [verseIndex]="selectedVerseIndex"
+  (share)="onShareVerse()"
+  (findSimilar)="onFindSimilar()"
+  (close)="closeVerseMenu()">
+</app-verse-menu>
+
+<app-theme-toggle></app-theme-toggle>

@@ -1,0 +1,374 @@
+[
+  {
+    "id": 1,
+    "name": "Genesis",
+    "teluguName": "ఆదికాండము",
+    "testament": "Old",
+    "fileName": "1_Genesis"
+  },
+  {
+    "id": 2,
+    "name": "Exodus",
+    "teluguName": "నిర్గమకాండము",
+    "testament": "Old",
+    "fileName": "2_Exodus"
+  },
+  {
+    "id": 3,
+    "name": "Leviticus",
+    "teluguName": "లేవీయకాండము",
+    "testament": "Old",
+    "fileName": "3_Leviticus"
+  },
+  {
+    "id": 4,
+    "name": "Numbers",
+    "teluguName": "సంఖ్యాకాండము",
+    "testament": "Old",
+    "fileName": "4_Numbers"
+  },
+  {
+    "id": 5,
+    "name": "Deuteronomy",
+    "teluguName": "ద్వితీయోపదేశకాండము",
+    "testament": "Old",
+    "fileName": "5_Deuteronomy"
+  },
+  {
+    "id": 6,
+    "name": "Joshua",
+    "teluguName": "యెహొషువ",
+    "testament": "Old",
+    "fileName": "6_Joshua"
+  },
+  {
+    "id": 7,
+    "name": "Judges",
+    "teluguName": "న్యాయాధిపతులు",
+    "testament": "Old",
+    "fileName": "7_Judges"
+  },
+  { "id": 8, "name": "Ruth", "teluguName": "రూతు", "testament": "Old", "fileName": "8_Ruth" },
+  {
+    "id": 9,
+    "name": "1 Samuel",
+    "teluguName": "1 సమూయేలు",
+    "testament": "Old",
+    "fileName": "9_1Samuel"
+  },
+  {
+    "id": 10,
+    "name": "2 Samuel",
+    "teluguName": "2 సమూయేలు",
+    "testament": "Old",
+    "fileName": "10_2Samuel"
+  },
+  {
+    "id": 11,
+    "name": "1 Kings",
+    "teluguName": "1 రాజులు",
+    "testament": "Old",
+    "fileName": "11_1Kings"
+  },
+  {
+    "id": 12,
+    "name": "2 Kings",
+    "teluguName": "2 రాజులు",
+    "testament": "Old",
+    "fileName": "12_2Kings"
+  },
+  {
+    "id": 13,
+    "name": "1 Chronicles",
+    "teluguName": "1 దినవృత్తాంతములు",
+    "testament": "Old",
+    "fileName": "13_1Chronicles"
+  },
+  {
+    "id": 14,
+    "name": "2 Chronicles",
+    "teluguName": "2 దినవృత్తాంతములు",
+    "testament": "Old",
+    "fileName": "14_2Chronicles"
+  },
+  { "id": 15, "name": "Ezra", "teluguName": "ఎజ్రా", "testament": "Old", "fileName": "15_Ezra" },
+  {
+    "id": 16,
+    "name": "Nehemiah",
+    "teluguName": "నెహెమ్యా",
+    "testament": "Old",
+    "fileName": "16_Nehemiah"
+  },
+  {
+    "id": 17,
+    "name": "Esther",
+    "teluguName": "ఎస్తేరు",
+    "testament": "Old",
+    "fileName": "17_Esther"
+  },
+  { "id": 18, "name": "Job", "teluguName": "యోబు", "testament": "Old", "fileName": "18_Job" },
+  {
+    "id": 19,
+    "name": "Psalms",
+    "teluguName": "కీర్తనలు",
+    "testament": "Old",
+    "fileName": "19_Psalms"
+  },
+  {
+    "id": 20,
+    "name": "Proverbs",
+    "teluguName": "సామెతలు",
+    "testament": "Old",
+    "fileName": "20_Proverbs"
+  },
+  {
+    "id": 21,
+    "name": "Ecclesiastes",
+    "teluguName": "ప్రసంగి",
+    "testament": "Old",
+    "fileName": "21_Ecclesiastes"
+  },
+  {
+    "id": 22,
+    "name": "Song of Solomon",
+    "teluguName": "పరమగీతము",
+    "testament": "Old",
+    "fileName": "22_SongofSolomon"
+  },
+  {
+    "id": 23,
+    "name": "Isaiah",
+    "teluguName": "యెషయా",
+    "testament": "Old",
+    "fileName": "23_Isaiah"
+  },
+  {
+    "id": 24,
+    "name": "Jeremiah",
+    "teluguName": "యిర్మీయా",
+    "testament": "Old",
+    "fileName": "24_Jeremiah"
+  },
+  {
+    "id": 25,
+    "name": "Lamentations",
+    "teluguName": "విలాపవాక్యములు",
+    "testament": "Old",
+    "fileName": "25_Lamentations"
+  },
+  {
+    "id": 26,
+    "name": "Ezekiel",
+    "teluguName": "యెహెజ్కేలు",
+    "testament": "Old",
+    "fileName": "26_Ezekiel"
+  },
+  {
+    "id": 27,
+    "name": "Daniel",
+    "teluguName": "దానియేలు",
+    "testament": "Old",
+    "fileName": "27_Daniel"
+  },
+  { "id": 28, "name": "Hosea", "teluguName": "హొషేయ", "testament": "Old", "fileName": "28_Hosea" },
+  { "id": 29, "name": "Joel", "teluguName": "యోవేలు", "testament": "Old", "fileName": "29_Joel" },
+  { "id": 30, "name": "Amos", "teluguName": "ఆమోసు", "testament": "Old", "fileName": "30_Amos" },
+  {
+    "id": 31,
+    "name": "Obadiah",
+    "teluguName": "ఓబద్యా",
+    "testament": "Old",
+    "fileName": "31_Obadiah"
+  },
+  { "id": 32, "name": "Jonah", "teluguName": "యోనా", "testament": "Old", "fileName": "32_Jonah" },
+  { "id": 33, "name": "Micah", "teluguName": "మీకా", "testament": "Old", "fileName": "33_Micah" },
+  { "id": 34, "name": "Nahum", "teluguName": "నహూము", "testament": "Old", "fileName": "34_Nahum" },
+  {
+    "id": 35,
+    "name": "Habakkuk",
+    "teluguName": "హబక్కూకు",
+    "testament": "Old",
+    "fileName": "35_Habakkuk"
+  },
+  {
+    "id": 36,
+    "name": "Zephaniah",
+    "teluguName": "జెఫన్యా",
+    "testament": "Old",
+    "fileName": "36_Zephaniah"
+  },
+  {
+    "id": 37,
+    "name": "Haggai",
+    "teluguName": "హగ్గయి",
+    "testament": "Old",
+    "fileName": "37_Haggai"
+  },
+  {
+    "id": 38,
+    "name": "Zechariah",
+    "teluguName": "జెకర్యా",
+    "testament": "Old",
+    "fileName": "38_Zechariah"
+  },
+  {
+    "id": 39,
+    "name": "Malachi",
+    "teluguName": "మలాకీ",
+    "testament": "Old",
+    "fileName": "39_Malachi"
+  },
+  {
+    "id": 40,
+    "name": "Matthew",
+    "teluguName": "మత్తయి",
+    "testament": "New",
+    "fileName": "40_Matthew"
+  },
+  { "id": 41, "name": "Mark", "teluguName": "మార్కు", "testament": "New", "fileName": "41_Mark" },
+  { "id": 42, "name": "Luke", "teluguName": "లూకా", "testament": "New", "fileName": "42_Luke" },
+  { "id": 43, "name": "John", "teluguName": "యోహాను", "testament": "New", "fileName": "43_John" },
+  {
+    "id": 44,
+    "name": "Acts",
+    "teluguName": "అపొస్తలుల కార్యములు",
+    "testament": "New",
+    "fileName": "44_Acts"
+  },
+  {
+    "id": 45,
+    "name": "Romans",
+    "teluguName": "రోమీయులకు",
+    "testament": "New",
+    "fileName": "45_Romans"
+  },
+  {
+    "id": 46,
+    "name": "1 Corinthians",
+    "teluguName": "1 కొరింథీయులకు",
+    "testament": "New",
+    "fileName": "46_1Corinthians"
+  },
+  {
+    "id": 47,
+    "name": "2 Corinthians",
+    "teluguName": "2 కొరింథీయులకు",
+    "testament": "New",
+    "fileName": "47_2Corinthians"
+  },
+  {
+    "id": 48,
+    "name": "Galatians",
+    "teluguName": "గలతీయులకు",
+    "testament": "New",
+    "fileName": "48_Galatians"
+  },
+  {
+    "id": 49,
+    "name": "Ephesians",
+    "teluguName": "ఎఫెసీయులకు",
+    "testament": "New",
+    "fileName": "49_Ephesians"
+  },
+  {
+    "id": 50,
+    "name": "Philippians",
+    "teluguName": "ఫిలిప్పీయులకు",
+    "testament": "New",
+    "fileName": "50_Philippians"
+  },
+  {
+    "id": 51,
+    "name": "Colossians",
+    "teluguName": "కొలొస్సయులకు",
+    "testament": "New",
+    "fileName": "51_Colossians"
+  },
+  {
+    "id": 52,
+    "name": "1 Thessalonians",
+    "teluguName": "1 థెస్సలొనీకయులకు",
+    "testament": "New",
+    "fileName": "52_1Thessalonians"
+  },
+  {
+    "id": 53,
+    "name": "2 Thessalonians",
+    "teluguName": "2 థెస్సలొనీకయులకు",
+    "testament": "New",
+    "fileName": "53_2Thessalonians"
+  },
+  {
+    "id": 54,
+    "name": "1 Timothy",
+    "teluguName": "1 తిమోతికి",
+    "testament": "New",
+    "fileName": "54_1Timothy"
+  },
+  {
+    "id": 55,
+    "name": "2 Timothy",
+    "teluguName": "2 తిమోతికి",
+    "testament": "New",
+    "fileName": "55_2Timothy"
+  },
+  { "id": 56, "name": "Titus", "teluguName": "తీతుకు", "testament": "New", "fileName": "56_Titus" },
+  {
+    "id": 57,
+    "name": "Philemon",
+    "teluguName": "ఫిలేమోనుకు",
+    "testament": "New",
+    "fileName": "57_Philemon"
+  },
+  {
+    "id": 58,
+    "name": "Hebrews",
+    "teluguName": "హెబ్రీయులకు",
+    "testament": "New",
+    "fileName": "58_Hebrews"
+  },
+  { "id": 59, "name": "James", "teluguName": "యాకోబు", "testament": "New", "fileName": "59_James" },
+  {
+    "id": 60,
+    "name": "1 Peter",
+    "teluguName": "1 పేతురు",
+    "testament": "New",
+    "fileName": "60_1Peter"
+  },
+  {
+    "id": 61,
+    "name": "2 Peter",
+    "teluguName": "2 పేతురు",
+    "testament": "New",
+    "fileName": "61_2Peter"
+  },
+  {
+    "id": 62,
+    "name": "1 John",
+    "teluguName": "1 యోహాను",
+    "testament": "New",
+    "fileName": "62_1John"
+  },
+  {
+    "id": 63,
+    "name": "2 John",
+    "teluguName": "2 యోహాను",
+    "testament": "New",
+    "fileName": "63_2John"
+  },
+  {
+    "id": 64,
+    "name": "3 John",
+    "teluguName": "3 యోహాను",
+    "testament": "New",
+    "fileName": "64_3John"
+  },
+  { "id": 65, "name": "Jude", "teluguName": "యూదా", "testament": "New", "fileName": "65_Jude" },
+  {
+    "id": 66,
+    "name": "Revelation",
+    "teluguName": "ప్రకటన",
+    "testament": "New",
+    "fileName": "66_Revelation"
+  }
+]

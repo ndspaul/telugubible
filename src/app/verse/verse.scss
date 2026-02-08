@@ -1,0 +1,33 @@
+.verse {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    
+    /* Interaction Styles */
+    cursor: pointer;
+    user-select: none; /* Important for long press */
+    transition: all 0.2s;
+    border-radius: 8px; /* Smooth corners on press */
+
+    &.active {
+        background-color: rgba(211, 84, 0, 0.1);
+        transform: scale(0.98);
+    }
+
+    font-size: 1.25em; /* Slightly larger for Telugu readability */
+    font-family: 'Mandali', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    
+    .verse-number {
+        font-weight: bold;
+        color: #d35400;
+        margin-right: 15px;
+        min-width: 25px;
+        text-align: right;
+    }
+    
+    .verse-text {
+        flex: 1;
+    }
+}
