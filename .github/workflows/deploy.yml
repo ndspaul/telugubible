@@ -27,12 +27,15 @@ jobs:
         run: npm ci
 
       - name: Build for GitHub Pages
-        run: npm run build -- --configuration production --base-href=/telugubible/ --output-path=dist
+        run: npm run build -- --configuration production --base-href=/telugubible/
+
+      - name: Copy index.html to 404.html for SPA routing
+        run: cp dist/telugubible/browser/index.html dist/telugubible/browser/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/browser
+          path: ./dist/telugubible/browser
 
   deploy:
     needs: build
