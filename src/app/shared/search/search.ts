@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BibleService, SearchResult } from '../../core/services/bible.service';
+import { BibleService, SearchResult, BibleBook } from '../../core/services/bible.service';
 import { Subject, debounceTime, distinctUntilChanged, switchMap, finalize } from 'rxjs';
 
 @Component({
@@ -9,8 +9,8 @@ import { Subject, debounceTime, distinctUntilChanged, switchMap, finalize } from
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="search-overlay">
-      <div class="search-container">
+    <div class="search-overlay" (click)="closeSearch()">
+      <div class="search-container" (click)="$event.stopPropagation()">
         <header class="search-header">
           <div class="input-wrapper">
             <span class="material-icons search-icon">search</span>
@@ -30,11 +30,38 @@ import { Subject, debounceTime, distinctUntilChanged, switchMap, finalize } from
           </button>
         </header>
         
+        <!-- Testament tabs - show when not searching -->
+        <div class="testament-tabs" *ngIf="!searchQuery && !isSimilarSearch">
+          <button 
+            [class.active]="activeTab === 'Old'"
+            (click)="activeTab = 'Old'"
+            class="tab-btn">
+            Old Testament
+          </button>
+          <button 
+            [class.active]="activeTab === 'New'"
+            (click)="activeTab = 'New'"
+            class="tab-btn">
+            New Testament
+          </button>
+        </div>
+
+        <!-- Book grid - show when not searching -->
+        <div class="book-grid" *ngIf="!searchQuery && !isSimilarSearch">
+          <button 
+            *ngFor="let book of (activeTab === 'Old' ? oldTestamentBooks : newTestamentBooks)"
+            (click)="selectBook(book)"
+            class="book-grid-item">
+            {{ book.teluguName }}
+          </button>
+        </div>
+        
         <div class="search-context" *ngIf="isSimilarSearch && searchQuery">
           <!-- <p class="context-info">సారూప్య వచనాలు (Similar Verses) - 50% పదాల ఎంపిక</p> -->
         </div>
 
-        <div class="search-results" *ngIf="results.length > 0 || loading || (searchQuery.length >= 2 && results.length === 0)">
+        <!-- Search results - show when searching -->
+        <div class="search-results" *ngIf="searchQuery && (results.length > 0 || loading || searchQuery.length >= 2)">
           <div *ngIf="loading" class="loading-state">
             <div class="spinner"></div>
             <p>searching...</p>
@@ -66,11 +93,17 @@ export class SearchComponent implements OnInit {
   @Input() isSimilarSearch: boolean = false;
   @Output() close = new EventEmitter<void>();
   @Output() resultSelected = new EventEmitter<SearchResult>();
+  @Output() bookSelected = new EventEmitter<BibleBook>();
 
   searchQuery = '';
   results: SearchResult[] = [];
   loading = false;
   private searchSubject = new Subject<string>();
+
+  // Book selection
+  activeTab: 'Old' | 'New' = 'Old';
+  oldTestamentBooks: BibleBook[] = [];
+  newTestamentBooks: BibleBook[] = [];
 
   constructor(private bibleService: BibleService) {
     this.searchSubject.pipe(
@@ -100,6 +133,12 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Load books for selection
+    this.bibleService.books$.subscribe(books => {
+      this.oldTestamentBooks = books.filter(b => b.testament === 'Old');
+      this.newTestamentBooks = books.filter(b => b.testament === 'New');
+    });
+
     if (this.initialQuery) {
       this.searchQuery = this.initialQuery;
       this.onSearchInput(this.initialQuery);
@@ -121,6 +160,11 @@ export class SearchComponent implements OnInit {
 
   selectResult(result: SearchResult) {
     this.resultSelected.emit(result);
+  }
+
+  selectBook(book: BibleBook) {
+    this.bookSelected.emit(book);
+    this.close.emit();
   }
 
   highlightText(text: string): string {

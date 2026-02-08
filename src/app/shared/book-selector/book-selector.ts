@@ -7,8 +7,8 @@ import { BibleService, BibleBook } from '../../core/services/bible.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="book-selector-overlay">
-      <div class="selector-container">
+    <div class="book-selector-overlay" (click)="closeSelector()">
+      <div class="selector-container" (click)="$event.stopPropagation()">
         <header class="selector-header">
           <div class="tabs">
             <button 

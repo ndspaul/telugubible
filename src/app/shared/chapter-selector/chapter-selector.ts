@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="chapter-selector-overlay">
-      <div class="selector-container">
+    <div class="chapter-selector-overlay" (click)="closeSelector()">
+      <div class="selector-container" (click)="$event.stopPropagation()">
         <header class="selector-header">
           <div class="header-title">
             <span *ngIf="bookName" class="book-name">{{ bookName }}</span>

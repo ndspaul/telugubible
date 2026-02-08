@@ -4,9 +4,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-footer',
   template: `
     <footer class="app-footer" (click)="onOpenSelector()">
-      <div class="book-info">
-        <span class="book-name">{{ bookName }}</span>
-        <span class="chapter-number">{{ chapter }}</span>
+      <div class="footer-content">
+        <span class="material-icons chevron-icon">expand_less</span>
+        <div class="book-info">
+          <span class="book-name">{{ bookName }}</span>
+          <span class="chapter-number">Chapter {{ chapter }}</span>
+        </div>
+        <span class="tap-hint">Tap to change</span>
       </div>
     </footer>
   `,
@@ -16,30 +20,73 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       bottom: 0;
       left: 0;
       right: 0;
-      height: 56px;
-      background-color: #fff;
-      border-top: 1px solid #e0e0e0;
+      height: 64px;
+      background: linear-gradient(to top, #ffffff, #f8f9fa);
+      border-top: 2px solid #d35400;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 -4px 12px rgba(211, 84, 0, 0.15);
       z-index: 1000;
-      transition: background-color 0.2s;
+      transition: all 0.3s ease;
     }
+    
+    .app-footer:hover {
+      background: linear-gradient(to top, #f8f9fa, #ffffff);
+      box-shadow: 0 -6px 16px rgba(211, 84, 0, 0.25);
+      transform: translateY(-2px);
+    }
+    
     .app-footer:active {
-      background-color: #f5f5f5;
+      background-color: #f0f0f0;
+      transform: translateY(0);
     }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    
+    .chevron-icon {
+      color: #d35400;
+      font-size: 20px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    
     .book-info {
       font-family: 'Ramabhadra', sans-serif;
-      font-size: 1.1rem;
-      color: #333;
       display: flex;
       gap: 8px;
+      align-items: center;
     }
+    
+    .book-name {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+    
     .chapter-number {
+      font-size: 1rem;
       font-weight: bold;
       color: #d35400;
+      background-color: rgba(211, 84, 0, 0.1);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    
+    .tap-hint {
+      font-size: 0.75rem;
+      color: #7f8c8d;
+      font-family: 'Mandali', sans-serif;
     }
   `]
 })

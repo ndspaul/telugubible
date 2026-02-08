@@ -102,6 +102,7 @@ export class MainComponent implements OnInit {
   onBookSelected(book: BibleBook) {
     this.bibleService.setBook(book);
     this.showSelector = false;
+    this.showSearch = false;  // Close search if book was selected from there
     this.showChapterSelector = true;
   }
 
