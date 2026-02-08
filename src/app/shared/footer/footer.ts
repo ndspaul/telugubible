@@ -30,6 +30,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       box-shadow: 0 -4px 12px rgba(211, 84, 0, 0.15);
       z-index: 1000;
       transition: all 0.3s ease;
+      /* Safe area for mobile devices */
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
     }
     
     .app-footer:hover {
@@ -48,6 +51,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       flex-direction: column;
       align-items: center;
       gap: 2px;
+      padding-bottom: 4px;
     }
     
     .chevron-icon {
@@ -66,6 +70,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       display: flex;
       gap: 8px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     
     .book-name {
@@ -84,9 +90,32 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     }
     
     .tap-hint {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #7f8c8d;
       font-family: 'Mandali', sans-serif;
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-height: 667px) {
+      .app-footer {
+        height: 56px;
+      }
+      
+      .chevron-icon {
+        font-size: 16px;
+      }
+      
+      .book-name {
+        font-size: 1rem;
+      }
+      
+      .chapter-number {
+        font-size: 0.9rem;
+      }
+      
+      .tap-hint {
+        font-size: 0.65rem;
+      }
     }
   `]
 })
