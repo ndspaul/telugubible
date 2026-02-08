@@ -144,7 +144,24 @@ export class MainComponent implements OnInit {
   onShareVerse() {
     if (!this.selectedVerse) return;
     
-    const text = `${this.selectedVerse.Verse}\n\n- ${this.selectedVerseBook} ${this.selectedVerseChapter}:${this.selectedVerseIndex}\n(Telugu Bible App)`;
+    // Get or prompt for user name
+    let userName = localStorage.getItem('telugu_bible_user_name');
+    if (!userName) {
+      userName = prompt('Enter your name (optional, for "Sent by"):');
+      if (userName && userName.trim()) {
+        localStorage.setItem('telugu_bible_user_name', userName.trim());
+      }
+    }
+
+    // Format with WhatsApp styling
+    // Using WhatsApp formatting: *bold*, _italic_, ~strikethrough~
+    const verseText = `_"${this.selectedVerse.Verse}"_`;
+    const reference = `*${this.selectedVerseBook} ${this.selectedVerseChapter}:${this.selectedVerseIndex}*`;
+    const separator = '━━━━━━━━━━━━━━━━';
+    const appName = '📖 Telugu Bible';
+    const sentBy = userName ? `\n👤 Sent by: ${userName}` : '';
+    
+    const text = `${verseText}\n\n${separator}\n${reference}\n${separator}\n${appName}${sentBy}`;
     
     if (navigator.share) {
       navigator.share({

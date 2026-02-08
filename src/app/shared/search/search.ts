@@ -18,7 +18,7 @@ import { Subject, debounceTime, distinctUntilChanged, switchMap, finalize } from
               type="text" 
               [(ngModel)]="searchQuery" 
               (ngModelChange)="onSearchInput($event)"
-              placeholder="శోధించండి..." 
+              placeholder="search..." 
               class="search-input"
               autoFocus>
             <button *ngIf="searchQuery" class="clear-btn" (click)="clearSearch()">
@@ -26,18 +26,18 @@ import { Subject, debounceTime, distinctUntilChanged, switchMap, finalize } from
             </button>
           </div>
           <button class="close-btn" (click)="closeSearch()">
-            రద్దు చేయి
+            cancel
           </button>
         </header>
         
         <div class="search-context" *ngIf="isSimilarSearch && searchQuery">
-          <p class="context-info">సారూప్య వచనాలు (Similar Verses) - 50% పదాల ఎంపిక</p>
+          <!-- <p class="context-info">సారూప్య వచనాలు (Similar Verses) - 50% పదాల ఎంపిక</p> -->
         </div>
 
         <div class="search-results" *ngIf="results.length > 0 || loading || (searchQuery.length >= 2 && results.length === 0)">
           <div *ngIf="loading" class="loading-state">
             <div class="spinner"></div>
-            <p>వెతుకుతోంది...</p>
+            <p>searching...</p>
           </div>
 
           <div *ngIf="!loading && results.length === 0 && searchQuery.length >= 2" class="no-results">
